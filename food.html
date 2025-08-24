@@ -1,0 +1,224 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>South Spice</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #ebe8e7;
+      color: #53606d;
+    }
+    header {
+      background: #a0a585;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #21286c;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #0f0808;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #50137c;
+    }
+    .hero {
+      background:url('https://i.etsystatic.com/18335454/r/il/d4c1b8/3141070107/il_fullxfull.3141070107_p9dk.jpg')no-repeat center/cover;
+      background-size: 1200px auto;
+      height:70vh;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      text-align: center;
+      color: rgb(76, 70, 129);
+      padding: 10px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      background: rgba(0,0,0,0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    .food-section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .food-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .food-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .food-card:hover {
+      transform: scale(1.05);
+    }
+
+    .food-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .food-card h3 {
+      padding: 15px;
+      font-size: 1.3rem;
+      color: #e10b0b;
+    }
+
+    .food-card p {
+      padding: 0 15px 15px;
+      font-size: 0.9rem;
+      color: #090808;
+    }
+    footer {
+      background: #023047;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #442c35;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+    @media (max-width: 1024px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .food-card img {
+        height: 180px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        height: 50vh;
+      }
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+      .food-card img {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>South Indian Delights</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav>
+      <ul id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#foods">Foods</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero" id="home">
+  </section>
+  <section class="food-section" id="foods">
+    <h2>Traditional South Indian Foods</h2>
+    <div class="food-grid">
+      <div class="food-card">
+        <img src="https://i0.wp.com/www.chitrasfoodbook.com/wp-content/uploads/2015/04/mysore-masala-dosa.jpg?ssl=1" alt="Dosa">
+        <h3>Dosa</h3>
+        <p>Crispy dosas, served with chutney and sambar.</p>
+      </div>
+      <div class="food-card">
+        <img src="https://c7.alamy.com/comp/E9D0TW/a-traditional-ethnic-south-indian-breakfast-of-idly-idli-rice-cake-E9D0TW.jpg" alt="Idli">
+        <h3>Idli</h3>
+        <p>Healthy breakfast staple with chutney and sambar.</p>
+      </div>
+      <div class="food-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_3IEB4CsyOGKs4EtNRAzmLaAoMMPPCzN0NA&s" alt="Bonda">
+        <h3>Bonda</h3>
+        <p>Soul satisfying tiffin.</p>
+      </div>
+      <div class="food-card">
+        <img src="https://www.awesomecuisine.com/wp-content/uploads/2020/03/poori-masala-kizhangu.jpg" alt="Poori">
+        <h3>Poori</h3>
+        <p>Melts your heart.</p>
+      </div>
+      <div class="food-card">
+        <img src="https://img.freepik.com/premium-photo/uthappam-oothappam-topped-with-onion-carrots-served-with-chutney-top-view_742418-361.jpg" alt="Uttapam">
+        <h3>Uttapam</h3>
+        <p>Not just food, it's a tradition.</p>
+      </div>
+      <div class="food-card">
+        <img src="https://paattiskitchen.com/wp-content/uploads/2022/11/kmc_20221115_142557.jpg" alt="Vada">
+        <h3>Medu Vada</h3>
+        <p>Crispy fried doughnuts served with coconut chutney and sambar.</p>
+      </div>
+    </div>
+  </section>
+  <footer id="contact">
+    <p>© 2025 South Indian Delights | Made with ❤ </p>
+  </footer>
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
